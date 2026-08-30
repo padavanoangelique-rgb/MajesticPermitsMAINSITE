@@ -1,18 +1,21 @@
 // Vercel serverless function — receives the "Free Case Review" form
-// submission from permit-closer.html, emails it via Resend to the Zoho
-// lead inbox, and saves it to Supabase for a searchable lead list.
+// submission from permit-closer.html.
 //
-// Requires these environment variables (Vercel Project Settings →
-// Environment Variables):
-//   RESEND_API_KEY            — from resend.com
-//   SUPABASE_URL              — Project Settings → API in Supabase
-//   SUPABASE_SERVICE_ROLE_KEY — same page, the service_role secret
-//                                (never the anon/public key — this one
-//                                bypasses Row Level Security, so it must
-//                                only ever live server-side)
+// Two things happen, in priority order:
+//   1. The lead is saved to Supabase (public.permit_closer_leads). This is
+//      the source of truth — if it fails, the visitor sees an error so the
+//      lead is never silently lost.
+//   2. An email notification is sent via Resend. This is best-effort: if
+//      RESEND_API_KEY isn't set or Resend errors, the lead is already safely
+//      stored and the visitor still sees success.
 //
-// The Supabase table is created by supabase-schema.sql — paste that into
-// the Supabase SQL Editor once before this will have anywhere to write.
+// Environment variables (Vercel Project Settings → Environment Variables):
+//   SUPABASE_URL       — https://<ref>.supabase.co
+//   SUPABASE_ANON_KEY  — the public anon/publishable key. Safe to use here:
+//                        RLS on permit_closer_leads allows INSERT only, so
+//                        this key can write a lead but cannot read any.
+//   RESEND_API_KEY     — optional. From resend.com. Without it, leads are
+//                        still captured; only the email alert is skipped.
 
 const LEAD_INBOX = 'angelique@majesticpermits.com';
 const FROM_ADDRESS = 'The Permit Closer <angelique@majesticpermits.com>';
@@ -40,75 +43,82 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Please fill in name, phone, email, and property address.' });
   }
 
-  const html = `
-    <h2 style="margin:0 0 12px;">New Case Review Request — The Permit Closer</h2>
-    <table cellpadding="6" cellspacing="0" border="0" style="border-collapse:collapse;">
-      <tr><td><strong>Name</strong></td><td>${escapeHtml(name)}</td></tr>
-      <tr><td><strong>Phone</strong></td><td>${escapeHtml(phone)}</td></tr>
-      <tr><td><strong>Email</strong></td><td>${escapeHtml(email)}</td></tr>
-      <tr><td><strong>Property Address</strong></td><td>${escapeHtml(address)}</td></tr>
-      <tr><td><strong>County</strong></td><td>${escapeHtml(county || '—')}</td></tr>
-      <tr><td><strong>Letter Reference #</strong></td><td>${escapeHtml(refnum || '—')}</td></tr>
-      <tr><td valign="top"><strong>Notes</strong></td><td>${escapeHtml(desc || '—')}</td></tr>
-    </table>
-  `;
+  // ---- 1. Save the lead (must succeed) ----------------------------------
+  const { SUPABASE_URL, SUPABASE_ANON_KEY } = process.env;
 
-  const sendEmail = fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      from: FROM_ADDRESS,
-      to: [LEAD_INBOX],
-      reply_to: email,
-      subject: `New Case Review Request — ${name}`,
-      html,
-    }),
-  });
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+    console.error('Missing SUPABASE_URL or SUPABASE_ANON_KEY.');
+    return res.status(500).json({ error: 'Something went wrong on our end. Please call (561) 888-3805.' });
+  }
 
-  // Saving to Supabase is best-effort — if it fails, we still want the
-  // email to go out and the homeowner to see success. Only logged, never
-  // surfaced to the visitor.
-  const saveLead = (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY)
-    ? fetch(`${process.env.SUPABASE_URL}/rest/v1/permit_closer_leads`, {
+  try {
+    const saved = await fetch(`${SUPABASE_URL}/rest/v1/permit_closer_leads`, {
+      method: 'POST',
+      headers: {
+        apikey: SUPABASE_ANON_KEY,
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+        'Content-Type': 'application/json',
+        Prefer: 'return=minimal',
+      },
+      body: JSON.stringify({
+        name,
+        phone,
+        email,
+        address,
+        county: county || null,
+        refnum: refnum || null,
+        notes: desc || null,
+      }),
+    });
+
+    if (!saved.ok) {
+      console.error('Supabase insert failed:', saved.status, await saved.text());
+      return res.status(500).json({ error: 'Something went wrong on our end. Please call (561) 888-3805.' });
+    }
+  } catch (err) {
+    console.error('Supabase insert threw:', err);
+    return res.status(500).json({ error: 'Something went wrong on our end. Please call (561) 888-3805.' });
+  }
+
+  // ---- 2. Email notification (best-effort) ------------------------------
+  if (process.env.RESEND_API_KEY) {
+    const html = `
+      <h2 style="margin:0 0 12px;">New Case Review Request — The Permit Closer</h2>
+      <table cellpadding="6" cellspacing="0" border="0" style="border-collapse:collapse;">
+        <tr><td><strong>Name</strong></td><td>${escapeHtml(name)}</td></tr>
+        <tr><td><strong>Phone</strong></td><td>${escapeHtml(phone)}</td></tr>
+        <tr><td><strong>Email</strong></td><td>${escapeHtml(email)}</td></tr>
+        <tr><td><strong>Property Address</strong></td><td>${escapeHtml(address)}</td></tr>
+        <tr><td><strong>County</strong></td><td>${escapeHtml(county || '—')}</td></tr>
+        <tr><td><strong>Letter Reference #</strong></td><td>${escapeHtml(refnum || '—')}</td></tr>
+        <tr><td valign="top"><strong>Notes</strong></td><td>${escapeHtml(desc || '—')}</td></tr>
+      </table>
+    `;
+
+    try {
+      const sent = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
-          apikey: process.env.SUPABASE_SERVICE_ROLE_KEY,
-          Authorization: `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`,
+          Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
           'Content-Type': 'application/json',
-          Prefer: 'return=minimal',
         },
         body: JSON.stringify({
-          name,
-          phone,
-          email,
-          address,
-          county: county || null,
-          refnum: refnum || null,
-          notes: desc || null,
+          from: FROM_ADDRESS,
+          to: [LEAD_INBOX],
+          reply_to: email,
+          subject: `New Case Review Request — ${name}`,
+          html,
         }),
-      })
-    : Promise.resolve(null);
+      });
 
-  const [emailResult, leadResult] = await Promise.allSettled([sendEmail, saveLead]);
-
-  if (leadResult.status === 'rejected') {
-    console.error('Supabase insert failed:', leadResult.reason);
-  } else if (leadResult.value && !leadResult.value.ok) {
-    console.error('Supabase insert failed:', await leadResult.value.text());
-  }
-
-  if (emailResult.status === 'rejected') {
-    console.error('Resend request failed:', emailResult.reason);
-    return res.status(502).json({ error: 'Failed to send email.' });
-  }
-
-  if (!emailResult.value.ok) {
-    const errText = await emailResult.value.text();
-    console.error('Resend error:', errText);
-    return res.status(502).json({ error: 'Failed to send email.' });
+      if (!sent.ok) {
+        console.error('Resend error:', sent.status, await sent.text());
+      }
+    } catch (err) {
+      console.error('Resend request threw:', err);
+    }
+  } else {
+    console.warn('RESEND_API_KEY not set — lead saved, email alert skipped.');
   }
 
   return res.status(200).json({ ok: true });
