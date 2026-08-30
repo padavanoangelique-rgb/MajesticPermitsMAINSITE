@@ -3,6 +3,18 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "thepermitcloser.com" }],
+      "destination": "https://www.majesticpermits.com/permit-closer",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.thepermitcloser.com" }],
+      "destination": "https://www.majesticpermits.com/permit-closer",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "thepermitcloser.com" }],
       "destination": "https://www.majesticpermits.com/permit-closer",
