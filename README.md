@@ -17,4 +17,4 @@ Single-file static site (`index.html`) for majesticpermits.com. No build step, n
 ## Notes
 
 - The "Client Login" links point to `https://hub.majesticpermits.com` (the client portal) — that's a separate site and isn't touched by this repo.
-- Update `hello@majesticpermits.com` / `(305) 555-0100` in `index.html` if contact details change.
+- Update `angelique@majesticpermits.com` / `(305) 555-0100` in `index.html` if contact details change.

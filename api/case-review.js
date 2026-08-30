@@ -14,8 +14,8 @@
 // The Supabase table is created by supabase-schema.sql — paste that into
 // the Supabase SQL Editor once before this will have anywhere to write.
 
-const LEAD_INBOX = 'leads@majesticpermits.com';
-const FROM_ADDRESS = 'The Permit Closer <leads@majesticpermits.com>';
+const LEAD_INBOX = 'angelique@majesticpermits.com';
+const FROM_ADDRESS = 'The Permit Closer <angelique@majesticpermits.com>';
 
 function escapeHtml(str = '') {
   return String(str).replace(/[&<>"']/g, (c) => ({
