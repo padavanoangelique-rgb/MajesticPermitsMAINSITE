@@ -5,13 +5,13 @@
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "thepermitcloser.com" }],
-      "destination": "https://majesticpermits.com/permit-closer",
+      "destination": "https://www.majesticpermits.com/permit-closer",
       "permanent": true
     },
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.thepermitcloser.com" }],
-      "destination": "https://majesticpermits.com/permit-closer",
+      "destination": "https://www.majesticpermits.com/permit-closer",
       "permanent": true
     }
   ]
