@@ -1,28 +1,12 @@
 // Vercel serverless function — receives the "Free Case Review" form
 // submission from permit-closer.html.
-//
-// Two things happen, in priority order:
-//   1. The lead is saved to Supabase (public.permit_closer_leads). This is
-//      the source of truth — if it fails, the visitor sees an error so the
-//      lead is never silently lost.
-//   2. An email notification is sent via Resend. This is best-effort: if
-//      RESEND_API_KEY isn't set or Resend errors, the lead is already safely
-//      stored and the visitor still sees success.
-//
-// Environment variables (Vercel Project Settings → Environment Variables):
-//   SUPABASE_URL       — https://<ref>.supabase.co
-//   SUPABASE_ANON_KEY  — the public anon/publishable key. Safe to use here:
-//                        RLS on permit_closer_leads allows INSERT only, so
-//                        this key can write a lead but cannot read any.
-//   RESEND_API_KEY     — optional. From resend.com. Without it, leads are
-//                        still captured; only the email alert is skipped.
 
-const LEAD_INBOX = 'angelique@majesticpermits.com';
-const FROM_ADDRESS = 'The Permit Closer <angelique@majesticpermits.com>';
+const LEAD_INBOX = 'request@majesticpermits.com';
+const FROM_ADDRESS = 'The Permit Closer <request@majesticpermits.com>';
 
 function escapeHtml(str = '') {
   return String(str).replace(/[&<>"']/g, (c) => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+    '&': '&', '<': '<', '>': '>', '"': '"', "'": '&#39;',
   }[c]));
 }
 
@@ -34,7 +18,6 @@ export default async function handler(req, res) {
 
   const { name, phone, email, address, refnum, county, desc, website } = req.body || {};
 
-  // Honeypot: real users never fill this in — bots often do.
   if (website) {
     return res.status(200).json({ ok: true });
   }
@@ -43,7 +26,6 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Please fill in name, phone, email, and property address.' });
   }
 
-  // ---- 1. Save the lead (must succeed) ----------------------------------
   const { SUPABASE_URL, SUPABASE_ANON_KEY } = process.env;
 
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
@@ -80,7 +62,6 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Something went wrong on our end. Please call (561) 888-3805.' });
   }
 
-  // ---- 2. Email notification (best-effort) ------------------------------
   if (process.env.RESEND_API_KEY) {
     const html = `
       <h2 style="margin:0 0 12px;">New Case Review Request — The Permit Closer</h2>
@@ -104,7 +85,7 @@ export default async function handler(req, res) {
         },
         body: JSON.stringify({
           from: FROM_ADDRESS,
-          to: [LEAD_INBOX],
+          to: [LEAD_INBOX, 'angelique@majesticpermits.com'],
           reply_to: email,
           subject: `New Case Review Request — ${name}`,
           html,
