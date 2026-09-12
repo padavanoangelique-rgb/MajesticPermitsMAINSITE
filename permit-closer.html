@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#FBF7F0">
 
 <title>Received a Letter About an Expired Permit? | The Permit Closer</title>
 <meta name="description" content="The Permit Closer helps South Florida homeowners resolve expired and open permits identified through public county records. Learn what your letter means and how the closure process works — a Majestic Permits company.">
@@ -27,7 +27,7 @@
 <meta name="twitter:image" content="https://thepermitcloser.com/og-image-permit-closer.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- Structured Data: Breadcrumbs -->
 <script type="application/ld+json">
@@ -111,25 +111,29 @@
 
 <style>
   :root{
-    --ink:#0B1220;
-    --ink-soft:#4B5568;
-    --muted:#7C879C;
-    --bg:#FFFFFF;
-    --bg-tint:#F6F8FC;
-    --bg-tint-2:#EFF4FF;
-    --blue:#1B4C86;
-    --blue-deep:#0F2E52;
-    --blue-tint:#E9EFF7;
-    --line:#E4E8F0;
-    --line-soft:#EDF0F6;
-    --shadow: 0 24px 60px -24px rgba(15,42,90,0.22);
-    --shadow-sm: 0 8px 24px -12px rgba(15,42,90,0.18);
-    --radius: 14px;
-    --radius-sm: 10px;
+    --ink:#1C2A3A;
+    --ink-soft:#5A6573;
+    --muted:#8A8074;
+    --bg:#FBF7F0;
+    --bg-tint:#F4EDE1;
+    --bg-tint-2:#F7F0E4;
+    --blue:#1A3A5C;
+    --blue-deep:#142C48;
+    --blue-tint:#F0E6D0;
+    --gold:#C9A227;
+    --gold-deep:#A6861C;
+    --cream:#FBF7F0;
+    --line:#E8DFD0;
+    --line-soft:#F0E8DA;
+    --shadow: 0 24px 60px -24px rgba(90,70,30,0.22);
+    --shadow-sm: 0 8px 24px -12px rgba(90,70,30,0.16);
+    --radius: 16px;
+    --radius-sm: 12px;
     --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{ scroll-behavior:smooth; color-scheme: light; background:#fff; }
+  html{ scroll-behavior:smooth; color-scheme: light; background:#FBF7F0; }
   body{
     font-family: var(--sans);
     background: var(--bg);
@@ -158,22 +162,22 @@
     padding: 7px 14px 7px 12px;
     border-radius: 999px;
   }
-  .eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--blue); flex-shrink:0; }
+  .eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--gold); flex-shrink:0; }
 
   /* ================= HEADER ================= */
   header.site{
     position: sticky; top:0; z-index:50;
-    background: rgba(255,255,255,0.9);
+    background: rgba(251,247,240,0.92);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
   }
   .nav-row{ display:flex; align-items:center; justify-content:space-between; height:76px; gap:14px; }
   .logo{ font-weight:800; font-size: 19px; letter-spacing:-0.01em; display:flex; align-items:center; gap:10px; }
   .logo .mark{
-    width:34px; height:34px; border-radius:50%; background: var(--blue);
-    border:2px solid var(--blue-deep);
+    width:34px; height:34px; border-radius:50%; background: var(--gold);
+    border:2px solid var(--gold-deep);
     display:inline-flex; align-items:center; justify-content:center;
-    color:#fff; font-size:12px; font-weight:800; flex-shrink:0;
+    color:var(--blue-deep); font-size:12px; font-weight:800; flex-shrink:0;
   }
   .logo .sub{ display:block; font-size:11px; font-weight:600; color:var(--muted); letter-spacing:0; margin-top:1px; }
   .logo-text{ display:flex; flex-direction:column; line-height:1.15; }
@@ -188,10 +192,10 @@
     display:inline-flex; align-items:center; justify-content:center; gap:8px;
     white-space:nowrap; border:1.5px solid transparent; transition: all .16s ease;
   }
-  .btn-primary{ background:var(--blue); color:#fff; box-shadow:var(--shadow-sm); }
-  .btn-primary:hover{ background:var(--blue-deep); }
+  .btn-primary{ background:var(--gold); color:var(--blue-deep); box-shadow:var(--shadow-sm); }
+  .btn-primary:hover{ background:var(--gold-deep); color:#fff; }
   .btn-outline{ border-color:var(--line); color:var(--ink); background:#fff; }
-  .btn-outline:hover{ border-color:var(--blue); color:var(--blue-deep); }
+  .btn-outline:hover{ border-color:var(--gold); color:var(--blue-deep); }
   .btn-ghost{ color:var(--ink-soft); font-size:14px; font-weight:600; padding:10px 6px; }
   .btn-ghost:hover{ color:var(--blue-deep); }
   .btn-lg{ padding:16px 26px; font-size:16px; border-radius:var(--radius-sm); }
@@ -214,7 +218,7 @@
 
   #mobileMenu{
     position:fixed; inset:0 0 auto 0; top:76px;
-    background:#fff; border-bottom:1px solid var(--line);
+    background:var(--cream); border-bottom:1px solid var(--line);
     transform:translateY(-8px); opacity:0; pointer-events:none;
     transition: all .2s ease; z-index:49; padding:20px 22px 28px;
   }
@@ -225,13 +229,13 @@
   /* ================= STICKY MOBILE CTA ================= */
   .sticky-cta{
     position:fixed; left:0; right:0; bottom:0; z-index:60;
-    background:#fff; border-top:1px solid var(--line);
-    box-shadow: 0 -8px 24px rgba(15,42,90,0.08);
+    background:var(--cream); border-top:1px solid var(--line);
+    box-shadow: 0 -8px 24px rgba(90,70,30,0.08);
     display:flex; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); gap:10px;
   }
   .sticky-cta a{ flex:1; text-align:center; padding:14px 10px; font-size:15px; font-weight:700; border-radius:var(--radius-sm); }
   .sticky-cta .call{ background:var(--bg-tint); color:var(--ink); }
-  .sticky-cta .quote{ background:var(--blue); color:#fff; }
+  .sticky-cta .quote{ background:var(--gold); color:var(--blue-deep); }
   @media(min-width:1020px){ .sticky-cta{ display:none; } }
   @media(max-width:1019px){ body{ padding-bottom:76px; } }
 
@@ -243,29 +247,42 @@
   .breadcrumb [aria-current="page"]{ color:var(--ink); font-weight:600; }
 
   /* ================= HERO ================= */
-  .hero{ padding:48px 0 40px; background: linear-gradient(180deg, var(--bg-tint) 0%, #fff 100%); }
-  .hero-inner{ max-width:820px; margin:0 auto; text-align:center; }
-  h1.hero-h{
-    font-weight:800; letter-spacing:-0.02em;
-    font-size: clamp(30px, 5.4vw, 50px);
-    line-height:1.1; margin: 18px 0 18px;
+  .hero{ padding:36px 0 56px; background: linear-gradient(180deg, #FFF9F0 0%, var(--bg) 70%); }
+  .hero-inner{
+    display:grid; gap:36px; align-items:center;
+    max-width:1160px; margin:0 auto; text-align:left;
   }
-  .hero-sub{ font-size:17.5px; color:var(--ink-soft); max-width:620px; margin:0 auto 28px; }
-  .hero-ctas{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-bottom:30px; }
+  @media(min-width:960px){ .hero-inner{ grid-template-columns: 1.05fr 0.95fr; gap:48px; } }
+  h1.hero-h{
+    font-family: var(--serif);
+    font-weight:650; letter-spacing:-0.02em;
+    font-size: clamp(32px, 4.6vw, 48px);
+    line-height:1.12; margin: 16px 0 16px;
+    color: var(--blue-deep);
+  }
+  .hero-sub{ font-size:17.5px; color:var(--ink-soft); max-width:540px; margin:0 0 26px; }
+  .hero-ctas{ display:flex; flex-wrap:wrap; gap:12px; margin-bottom:22px; }
+  .hero-media{
+    background:#fff; border:1px solid var(--line); border-radius:20px;
+    overflow:hidden; box-shadow: var(--shadow);
+  }
+  .hero-media video, .hero-media img{
+    width:100%; height:auto; display:block; aspect-ratio:16/9; object-fit:cover; background:#1A3A5C;
+  }
 
-  .legit-strip{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; }
+  .legit-strip{ display:flex; flex-wrap:wrap; gap:10px; }
   .legit-item{
     font-size:13.5px; font-weight:600; color:var(--ink-soft);
     background:#fff; border:1px solid var(--line); border-radius:999px;
     padding:9px 15px; display:flex; align-items:center; gap:7px;
   }
-  .legit-item svg{ width:14px; height:14px; color:var(--blue); flex-shrink:0; }
+  .legit-item svg{ width:14px; height:14px; color:var(--gold-deep); flex-shrink:0; }
 
   /* ================= SECTION GENERIC ================= */
   section{ padding:60px 0; }
   section[id]{ scroll-margin-top:92px; }
   .section-head{ max-width:680px; margin:0 auto 36px; text-align:center; }
-  .section-head h2{ font-weight:800; letter-spacing:-0.015em; font-size:clamp(24px,3.4vw,34px); margin-top:14px; }
+  .section-head h2{ font-family:var(--serif); font-weight:650; letter-spacing:-0.015em; font-size:clamp(26px,3.4vw,36px); margin-top:14px; color:var(--blue-deep); }
   .section-head p{ color:var(--ink-soft); margin-top:12px; font-size:16.5px; }
 
   /* ================= LETTER EXPLAINER ================= */
@@ -292,21 +309,18 @@
   .reassure-item span{ font-size:14px; color:var(--ink-soft); }
 
   /* ================= RISK BANNER ================= */
-  .risk-banner{ background: linear-gradient(135deg, var(--blue-deep), var(--blue)); color:#fff; border-radius:24px; padding:44px 28px; }
+  .risk-banner{ background: #FFFDF8; color:var(--ink); border-radius:24px; padding:44px 28px; border:1px solid var(--line); box-shadow:var(--shadow-sm); }
   .risk-grid{ display:grid; gap:26px; }
-  @media(min-width:900px){ .risk-grid{ grid-template-columns:1.15fr 0.85fr; align-items:center; } }
-  .risk-banner .eyebrow{ background:rgba(255,255,255,0.16); color:#fff; }
-  .risk-banner .eyebrow .dot{ background:#fff; }
-  .risk-banner h2{ font-weight:800; font-size:clamp(24px,3.4vw,32px); margin:14px 0 14px; letter-spacing:-0.015em; }
-  .risk-banner p{ color:rgba(255,255,255,0.85); font-size:15.5px; max-width:520px; }
+  @media(min-width:900px){ .risk-grid{ grid-template-columns: 1.15fr 0.85fr; align-items:center; } }
+  .risk-banner .eyebrow{ background:var(--blue-tint); color:var(--blue-deep); }
+  .risk-banner .eyebrow .dot{ background:var(--gold); }
+  .risk-banner h2{ font-family:var(--serif); font-weight:650; font-size:clamp(24px,3.4vw,32px); margin:14px 0 14px; letter-spacing:-0.015em; color:var(--blue-deep); }
+  .risk-banner p{ color:var(--ink-soft); font-size:15.5px; max-width:520px; }
   .risk-list{ list-style:none; margin-top:18px; display:flex; flex-direction:column; gap:11px; }
-  .risk-list li{ font-size:14.5px; color:rgba(255,255,255,0.92); display:flex; gap:10px; }
-  .risk-list li::before{ content:"—"; color:#fff; flex-shrink:0; }
+  .risk-list li{ font-size:14.5px; color:var(--ink); display:flex; gap:10px; }
+  .risk-list li::before{ content:"•"; color:var(--gold-deep); flex-shrink:0; }
   .risk-actions{ display:flex; flex-direction:column; gap:12px; }
-  .risk-actions .btn-primary{ background:#fff; color:var(--blue-deep); }
-  .risk-actions .btn-primary:hover{ background:#EFF4FF; }
-  .risk-actions .btn-outline{ border-color:rgba(255,255,255,0.5); color:#fff; background:transparent; }
-  .risk-actions .btn-outline:hover{ background:rgba(255,255,255,0.12); }
+  .risk-actions .btn-outline{ border-color:var(--line); color:var(--ink); background:#fff; }
 
   /* ================= PROCESS ================= */
   .path{ display:grid; gap:20px; grid-template-columns:1fr; }
@@ -324,7 +338,7 @@
   .contact-section{ background:var(--bg-tint); }
   .contact-grid{ display:grid; gap:32px; }
   @media(min-width:960px){ .contact-grid{ grid-template-columns: 0.85fr 1.15fr; align-items:start; } }
-  .contact-side h2{ font-weight:800; font-size:clamp(24px,3.2vw,30px); margin:14px 0 14px; letter-spacing:-0.015em; }
+  .contact-side h2{ font-family:var(--serif); font-weight:650; font-size:clamp(24px,3.2vw,30px); margin:14px 0 14px; letter-spacing:-0.015em; color:var(--blue-deep); }
   .contact-side .lead{ color:var(--ink-soft); font-size:15.5px; margin-bottom:22px; }
   .contact-side .btn{ margin-bottom:12px; }
   .contact-info{ margin-top:24px; display:flex; flex-direction:column; gap:16px; }
@@ -373,22 +387,22 @@
   .portal-inner p strong{ color:var(--ink); }
 
   /* ================= FOOTER ================= */
-  footer{ background:var(--ink); color:rgba(255,255,255,0.75); padding:56px 0 30px; }
+  footer{ background:var(--blue-deep); color:rgba(255,255,255,0.75); padding:56px 0 30px; }
   .foot-grid{ display:grid; gap:32px; grid-template-columns:1fr; margin-bottom:36px; }
   @media(min-width:760px){ .foot-grid{ grid-template-columns:1.3fr 1fr 1fr; } }
   .foot-col h5{ font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:14px; font-weight:700; }
   .foot-col a, .foot-col p{ display:block; font-size:14px; margin-bottom:10px; color:rgba(255,255,255,0.7); }
   .foot-col a:hover{ color:#fff; }
   .foot-logo{ font-size:19px; font-weight:800; color:#fff; margin-bottom:12px; display:flex; align-items:center; gap:9px; }
-  .foot-logo .mark{ width:28px; height:28px; border-radius:50%; background:var(--blue); border:2px solid var(--blue-deep); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; }
+  .foot-logo .mark{ width:28px; height:28px; border-radius:50%; background:var(--gold); border:2px solid var(--gold-deep); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:var(--blue-deep); }
   .foot-bottom{ border-top:1px solid rgba(255,255,255,0.12); padding-top:22px; display:flex; flex-direction:column; gap:10px; font-size:12.5px; color:rgba(255,255,255,0.45); }
   @media(min-width:760px){ .foot-bottom{ flex-direction:row; justify-content:space-between; } }
   .disclosure{ max-width:640px; }
 
   @media (prefers-color-scheme: dark){
-    html, body{ background:#FFFFFF !important; color:#0B1220 !important; }
+    html, body{ background:#FBF7F0 !important; color:#1C2A3A !important; }
     header.site, #mobileMenu, .sticky-cta, .explain-card, .reassure-item, .path-step,
-    form.quote, .field input, .field select, .field textarea{ background:#FFFFFF !important; color:#0B1220 !important; }
+    form.quote, .field input, .field select, .field textarea{ background:#FFFFFF !important; color:#1C2A3A !important; }
   }
 </style>
 </head>
@@ -441,17 +455,29 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap hero-inner">
-      <span class="eyebrow"><span class="dot"></span>You Received a Letter From Us</span>
-      <h1 class="hero-h">Here's what your permit letter means — and what to do next.</h1>
-      <p class="hero-sub">You received a notice because county records show an expired or open permit tied to your property. This page explains why, what it means for you, and how to get it resolved — no pressure, no obligation.</p>
-      <div class="hero-ctas">
-        <a href="#case-review" class="btn btn-primary btn-lg">Get My Free Case Review</a>
-        <a href="tel:+15618883805" class="btn btn-outline btn-lg">Call (561) 888-3805</a>
+      <div>
+        <span class="eyebrow"><span class="dot"></span>We're here to help — no pressure</span>
+        <h1 class="hero-h">You're not in trouble. Here's what that letter actually means.</h1>
+        <p class="hero-sub">County records show an expired or open permit on your property. We'll walk you through it, answer questions, and close it if you'd like us to — no obligation.</p>
+        <div class="hero-ctas">
+          <a href="#case-review" class="btn btn-primary btn-lg">Get My Free Case Review</a>
+          <a href="tel:+15618883805" class="btn btn-outline btn-lg">Call (561) 888-3805</a>
+        </div>
+        <div class="legit-strip">
+          <span class="legit-item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5L9.5 18L20 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Not a government agency</span>
+          <span class="legit-item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5L9.5 18L20 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>A Majestic Permits company</span>
+          <span class="legit-item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5L9.5 18L20 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>No obligation to respond</span>
+        </div>
       </div>
-      <div class="legit-strip">
-        <span class="legit-item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5L9.5 18L20 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Not a government agency</span>
-        <span class="legit-item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5L9.5 18L20 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>A Majestic Permits company</span>
-        <span class="legit-item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5L9.5 18L20 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>No obligation to respond</span>
+      <div class="hero-media">
+        <video
+          src="/videos/permit-closer-landing.mp4"
+          poster="/videos/permit-closer-poster.jpg"
+          autoplay muted loop playsinline
+          controls
+          preload="metadata"
+          aria-label="What The Permit Closer letter means">
+        </video>
       </div>
     </div>
   </section>
@@ -461,8 +487,8 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow"><span class="dot"></span>Why This Letter</span>
-        <h2>Straight answers, before anything else.</h2>
-        <p>We know a letter like this can be unsettling. Here's exactly what's going on.</p>
+        <h2>Straight answers, in plain English.</h2>
+        <p>A letter in the mail can feel confusing. Here's the simple version of what's going on.</p>
       </div>
       <div class="explain-grid">
         <div class="explain-card">
@@ -519,8 +545,8 @@
         <div class="risk-grid">
           <div>
             <span class="eyebrow"><span class="dot"></span>Why It's Worth Resolving</span>
-            <h2>An unresolved permit doesn't go away on its own.</h2>
-            <p>It stays on record until it's closed — and it tends to surface at the worst possible time.</p>
+            <h2>It's easier to close now than later.</h2>
+            <p>An open permit stays on record until it's resolved. Handling it on your own time is calmer than waiting for a sale, refinance, or insurance review.</p>
             <ul class="risk-list">
               <li>Can delay or derail a future home sale during title search</li>
               <li>Can complicate homeowners insurance coverage or claims</li>
@@ -542,7 +568,7 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow"><span class="dot"></span>How It Works</span>
-        <h2>If you'd like our help, here's the process.</h2>
+        <h2>If you'd like a hand, here's how we help.</h2>
       </div>
       <div class="path">
         <div class="path-step">
@@ -569,8 +595,8 @@
     <div class="wrap contact-grid">
       <div class="contact-side">
         <span class="eyebrow"><span class="dot"></span>Free Case Review</span>
-        <h2>Let's look into your letter.</h2>
-        <p class="lead">Tell us a bit about the property and, if you have it, the reference details from your letter. We typically respond within one business day.</p>
+        <h2>Let's look into it together.</h2>
+        <p class="lead">Share a bit about the property and, if you have it, the reference on your letter. We'll get back to you within one business day — no pressure either way.</p>
         <a href="tel:+15618883805" class="btn btn-primary btn-lg btn-block">Call (561) 888-3805</a>
         <a href="https://hub.majesticpermits.com" target="_blank" rel="noopener" class="btn btn-ghost">Existing client? Client Portal ↗</a>
         <div class="contact-info">
