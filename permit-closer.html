@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
-<meta name="theme-color" content="#FBF7F0">
+<meta name="theme-color" content="#FFFFFF">
 
 <title>Received a Letter About an Expired Permit? | The Permit Closer</title>
 <meta name="description" content="The Permit Closer helps South Florida homeowners resolve expired and open permits identified through public county records. Learn what your letter means and how the closure process works — a Majestic Permits company.">
@@ -111,29 +111,29 @@
 
 <style>
   :root{
-    --ink:#1C2A3A;
-    --ink-soft:#5A6573;
-    --muted:#8A8074;
-    --bg:#FBF7F0;
-    --bg-tint:#F4EDE1;
-    --bg-tint-2:#F7F0E4;
-    --blue:#1A3A5C;
-    --blue-deep:#142C48;
-    --blue-tint:#F0E6D0;
-    --gold:#C9A227;
-    --gold-deep:#A6861C;
-    --cream:#FBF7F0;
-    --line:#E8DFD0;
-    --line-soft:#F0E8DA;
-    --shadow: 0 24px 60px -24px rgba(90,70,30,0.22);
-    --shadow-sm: 0 8px 24px -12px rgba(90,70,30,0.16);
+    --ink:#0B1220;
+    --ink-soft:#4B5568;
+    --muted:#7C879C;
+    --bg:#FFFFFF;
+    --bg-tint:#F6F8FC;
+    --bg-tint-2:#EFF4FF;
+    --blue:#1B4C86;
+    --blue-deep:#0F2E52;
+    --blue-tint:#E9EFF7;
+    --gold:#1B4C86;
+    --gold-deep:#0F2E52;
+    --cream:#FFFFFF;
+    --line:#E4E8F0;
+    --line-soft:#EDF0F6;
+    --shadow: 0 24px 60px -24px rgba(15,42,90,0.22);
+    --shadow-sm: 0 8px 24px -12px rgba(15,42,90,0.18);
     --radius: 16px;
     --radius-sm: 12px;
     --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --serif: "Fraunces", Georgia, "Times New Roman", serif;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{ scroll-behavior:smooth; color-scheme: light; background:#FBF7F0; }
+  html{ scroll-behavior:smooth; color-scheme: light; background:#fff; }
   body{
     font-family: var(--sans);
     background: var(--bg);
@@ -162,22 +162,22 @@
     padding: 7px 14px 7px 12px;
     border-radius: 999px;
   }
-  .eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+  .eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--blue); flex-shrink:0; }
 
   /* ================= HEADER ================= */
   header.site{
     position: sticky; top:0; z-index:50;
-    background: rgba(251,247,240,0.92);
+    background: rgba(255,255,255,0.92);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
   }
   .nav-row{ display:flex; align-items:center; justify-content:space-between; height:76px; gap:14px; }
   .logo{ font-weight:800; font-size: 19px; letter-spacing:-0.01em; display:flex; align-items:center; gap:10px; }
   .logo .mark{
-    width:34px; height:34px; border-radius:50%; background: var(--gold);
-    border:2px solid var(--gold-deep);
+    width:34px; height:34px; border-radius:50%; background: var(--blue);
+    border:2px solid var(--blue-deep);
     display:inline-flex; align-items:center; justify-content:center;
-    color:var(--blue-deep); font-size:12px; font-weight:800; flex-shrink:0;
+    color:#fff; font-size:12px; font-weight:800; flex-shrink:0;
   }
   .logo .sub{ display:block; font-size:11px; font-weight:600; color:var(--muted); letter-spacing:0; margin-top:1px; }
   .logo-text{ display:flex; flex-direction:column; line-height:1.15; }
@@ -192,10 +192,10 @@
     display:inline-flex; align-items:center; justify-content:center; gap:8px;
     white-space:nowrap; border:1.5px solid transparent; transition: all .16s ease;
   }
-  .btn-primary{ background:var(--gold); color:var(--blue-deep); box-shadow:var(--shadow-sm); }
-  .btn-primary:hover{ background:var(--gold-deep); color:#fff; }
+  .btn-primary{ background:var(--blue); color:#fff; box-shadow:var(--shadow-sm); }
+  .btn-primary:hover{ background:var(--blue-deep); color:#fff; }
   .btn-outline{ border-color:var(--line); color:var(--ink); background:#fff; }
-  .btn-outline:hover{ border-color:var(--gold); color:var(--blue-deep); }
+  .btn-outline:hover{ border-color:var(--blue); color:var(--blue-deep); }
   .btn-ghost{ color:var(--ink-soft); font-size:14px; font-weight:600; padding:10px 6px; }
   .btn-ghost:hover{ color:var(--blue-deep); }
   .btn-lg{ padding:16px 26px; font-size:16px; border-radius:var(--radius-sm); }
@@ -235,7 +235,7 @@
   }
   .sticky-cta a{ flex:1; text-align:center; padding:14px 10px; font-size:15px; font-weight:700; border-radius:var(--radius-sm); }
   .sticky-cta .call{ background:var(--bg-tint); color:var(--ink); }
-  .sticky-cta .quote{ background:var(--gold); color:var(--blue-deep); }
+  .sticky-cta .quote{ background:var(--blue); color:#fff; }
   @media(min-width:1020px){ .sticky-cta{ display:none; } }
   @media(max-width:1019px){ body{ padding-bottom:76px; } }
 
@@ -247,7 +247,7 @@
   .breadcrumb [aria-current="page"]{ color:var(--ink); font-weight:600; }
 
   /* ================= HERO ================= */
-  .hero{ padding:36px 0 56px; background: linear-gradient(180deg, #FFF9F0 0%, var(--bg) 70%); }
+  .hero{ padding:36px 0 56px; background: linear-gradient(180deg, var(--bg-tint) 0%, #fff 70%); }
   .hero-inner{
     display:grid; gap:36px; align-items:center;
     max-width:1160px; margin:0 auto; text-align:left;
@@ -276,7 +276,7 @@
     background:#fff; border:1px solid var(--line); border-radius:999px;
     padding:9px 15px; display:flex; align-items:center; gap:7px;
   }
-  .legit-item svg{ width:14px; height:14px; color:var(--gold-deep); flex-shrink:0; }
+  .legit-item svg{ width:14px; height:14px; color:var(--blue); flex-shrink:0; }
 
   /* ================= SECTION GENERIC ================= */
   section{ padding:60px 0; }
@@ -309,16 +309,16 @@
   .reassure-item span{ font-size:14px; color:var(--ink-soft); }
 
   /* ================= RISK BANNER ================= */
-  .risk-banner{ background: #FFFDF8; color:var(--ink); border-radius:24px; padding:44px 28px; border:1px solid var(--line); box-shadow:var(--shadow-sm); }
+  .risk-banner{ background: var(--bg-tint); color:var(--ink); border-radius:24px; padding:44px 28px; border:1px solid var(--line); box-shadow:var(--shadow-sm); }
   .risk-grid{ display:grid; gap:26px; }
   @media(min-width:900px){ .risk-grid{ grid-template-columns: 1.15fr 0.85fr; align-items:center; } }
   .risk-banner .eyebrow{ background:var(--blue-tint); color:var(--blue-deep); }
-  .risk-banner .eyebrow .dot{ background:var(--gold); }
+  .risk-banner .eyebrow .dot{ background:var(--blue); }
   .risk-banner h2{ font-family:var(--serif); font-weight:650; font-size:clamp(24px,3.4vw,32px); margin:14px 0 14px; letter-spacing:-0.015em; color:var(--blue-deep); }
   .risk-banner p{ color:var(--ink-soft); font-size:15.5px; max-width:520px; }
   .risk-list{ list-style:none; margin-top:18px; display:flex; flex-direction:column; gap:11px; }
   .risk-list li{ font-size:14.5px; color:var(--ink); display:flex; gap:10px; }
-  .risk-list li::before{ content:"•"; color:var(--gold-deep); flex-shrink:0; }
+  .risk-list li::before{ content:"•"; color:var(--blue); flex-shrink:0; }
   .risk-actions{ display:flex; flex-direction:column; gap:12px; }
   .risk-actions .btn-outline{ border-color:var(--line); color:var(--ink); background:#fff; }
 
@@ -394,13 +394,13 @@
   .foot-col a, .foot-col p{ display:block; font-size:14px; margin-bottom:10px; color:rgba(255,255,255,0.7); }
   .foot-col a:hover{ color:#fff; }
   .foot-logo{ font-size:19px; font-weight:800; color:#fff; margin-bottom:12px; display:flex; align-items:center; gap:9px; }
-  .foot-logo .mark{ width:28px; height:28px; border-radius:50%; background:var(--gold); border:2px solid var(--gold-deep); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:var(--blue-deep); }
+  .foot-logo .mark{ width:28px; height:28px; border-radius:50%; background:var(--blue); border:2px solid var(--blue-deep); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; }
   .foot-bottom{ border-top:1px solid rgba(255,255,255,0.12); padding-top:22px; display:flex; flex-direction:column; gap:10px; font-size:12.5px; color:rgba(255,255,255,0.45); }
   @media(min-width:760px){ .foot-bottom{ flex-direction:row; justify-content:space-between; } }
   .disclosure{ max-width:640px; }
 
   @media (prefers-color-scheme: dark){
-    html, body{ background:#FBF7F0 !important; color:#1C2A3A !important; }
+    html, body{ background:#FFFFFF !important; color:#0B1220 !important; }
     header.site, #mobileMenu, .sticky-cta, .explain-card, .reassure-item, .path-step,
     form.quote, .field input, .field select, .field textarea{ background:#FFFFFF !important; color:#1C2A3A !important; }
   }
