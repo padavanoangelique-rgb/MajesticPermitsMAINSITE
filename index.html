@@ -30,7 +30,7 @@
   "description": "White-glove permit expediting service for contractors and homeowners across South Florida, covering impact windows, doors, roofing, and renovation permits.",
   "url": "https://majesticpermits.com/",
   "email": "angelique@majesticpermits.com",
-  "telephone": "+1-305-555-0100",
+  "telephone": "+1-561-888-3805",
   "areaServed": [
     { "@type": "AdministrativeArea", "name": "Miami-Dade County, Florida" },
     { "@type": "AdministrativeArea", "name": "Broward County, Florida" },
@@ -90,55 +90,55 @@
 <body>
 <style>
   :root{
-    --bg:#ECE7D8;
-    --surface:#F7F4EA;
-    --surface-2:#EFE9D8;
-    --text:#16233A;
-    --text-soft:#4C5A72;
-    --text-faint:#8A8067;
-    --border:#C9C0A8;
-    --accent:#1B4C86;
-    --accent-2:#0F2E52;
-    --on-deep:#F3EEDD;
-    --on-deep-soft:#B9C6D8;
-    --stamp:#B8402A;
-    --sun:#B4791C;
-    --success:#2F7A4D;
-    --shadow: 0 1px 0 rgba(22,35,58,0.05);
+    --bg:#0c1024;
+    --surface:#17142f;
+    --surface-2:#211a42;
+    --text:#f4f1ff;
+    --text-soft:#c9c2e4;
+    --text-faint:#8f87ad;
+    --border:rgba(196,181,253,0.22);
+    --accent:#c4b5fd;
+    --accent-2:#6d28d9;
+    --on-deep:#f4f1ff;
+    --on-deep-soft:#c9c2e4;
+    --stamp:#ddd6fe;
+    --sun:#c4b5fd;
+    --success:#c4b5fd;
+    --shadow: 0 1px 0 rgba(196,181,253,0.08);
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --bg:#0B1E38;
-      --surface:#122A4B;
-      --surface-2:#0E233E;
-      --text:#EAE4D2;
-      --text-soft:#A9B7C9;
-      --text-faint:#7E8FA5;
-      --border:rgba(234,228,210,0.18);
-      --accent:#6FA3E0;
-      --accent-2:#071527;
-      --on-deep:#EDE8DA;
-      --on-deep-soft:#A9B7C9;
-      --stamp:#E2694A;
-      --sun:#E8A33D;
-      --success:#4FAE79;
+      --bg:#0c1024;
+      --surface:#17142f;
+      --surface-2:#211a42;
+      --text:#f4f1ff;
+      --text-soft:#c9c2e4;
+      --text-faint:#8f87ad;
+      --border:rgba(196,181,253,0.22);
+      --accent:#c4b5fd;
+      --accent-2:#6d28d9;
+      --on-deep:#f4f1ff;
+      --on-deep-soft:#c9c2e4;
+      --stamp:#ddd6fe;
+      --sun:#c4b5fd;
+      --success:#c4b5fd;
     }
   }
   :root[data-theme="dark"]{
-    --bg:#0B1E38;
-    --surface:#122A4B;
-    --surface-2:#0E233E;
-    --text:#EAE4D2;
-    --text-soft:#A9B7C9;
-    --text-faint:#7E8FA5;
-    --border:rgba(234,228,210,0.18);
-    --accent:#6FA3E0;
-    --accent-2:#071527;
-    --on-deep:#EDE8DA;
-    --on-deep-soft:#A9B7C9;
-    --stamp:#E2694A;
-    --sun:#E8A33D;
-    --success:#4FAE79;
+    --bg:#0c1024;
+    --surface:#17142f;
+    --surface-2:#211a42;
+    --text:#f4f1ff;
+    --text-soft:#c9c2e4;
+    --text-faint:#8f87ad;
+    --border:rgba(196,181,253,0.22);
+    --accent:#c4b5fd;
+    --accent-2:#6d28d9;
+    --on-deep:#f4f1ff;
+    --on-deep-soft:#c9c2e4;
+    --stamp:#ddd6fe;
+    --sun:#c4b5fd;
+    --success:#c4b5fd;
   }
 
   *{box-sizing:border-box;}
@@ -409,6 +409,18 @@
   .mobile-menu.open{ display:flex; }
   .mobile-menu a{ padding:14px 24px; text-decoration:none; color:var(--text-soft); font-size:15px; border-top:1px solid var(--border); }
   .mobile-menu a.btn-primary{ margin:14px 24px; border-top:none; text-align:center; }
+  .photo-strip{display:grid; grid-template-columns:repeat(4,1fr); gap:10px;}
+  .photo-strip figure{margin:0; border-radius:16px; overflow:hidden; border:1px solid var(--border); background:var(--surface);}
+  .photo-strip img{width:100%; height:180px; object-fit:cover; display:block;}
+  .photo-strip figcaption{padding:8px 10px 10px; font-size:12px; color:var(--text-soft);}
+  .j-tabs{display:flex; flex-wrap:wrap; gap:8px; margin:18px 0;}
+  .j-tabs button{border:1px solid var(--border); background:transparent; color:var(--text-soft); border-radius:999px; padding:8px 14px; font:inherit; cursor:pointer;}
+  .j-tabs button.on{background:var(--accent); color:#1a1033; border-color:var(--accent); font-weight:700;}
+  .j-panel{display:none; flex-wrap:wrap; gap:8px;}
+  .j-panel.on{display:flex;}
+  .j-panel a{border:1px solid var(--border); border-radius:999px; padding:6px 12px; font-size:14px; color:var(--text-soft);}
+  .j-panel a:hover{border-color:var(--accent); color:var(--text);}
+  @media (max-width:800px){ .photo-strip{grid-template-columns:1fr 1fr;} }
 </style>
 
 <header>
@@ -422,6 +434,7 @@
       <li><a href="#who-its-for">Who It's For</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="#jurisdictions">Jurisdictions</a></li>
       <li><a href="/permit-closer">The Permit Closer</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -437,6 +450,7 @@
     <a href="#who-its-for">Who It's For</a>
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
+    <a href="#jurisdictions">Jurisdictions</a>
     <a href="/permit-closer">The Permit Closer</a>
     <a href="#contact">Contact</a>
     <a class="btn btn-primary" href="https://hub.majesticpermits.com" target="_blank" rel="noopener">Client Login</a>
@@ -462,33 +476,33 @@
           <span class="grommet"></span>
           <svg class="plate-svg" viewBox="0 0 320 260" fill="none">
             <!-- house cross-section line art -->
-            <polyline points="30,150 30,230 290,230 290,150" stroke="#6FA3E0" stroke-width="2"/>
-            <polyline points="20,150 160,60 300,150" stroke="#6FA3E0" stroke-width="2" stroke-linejoin="round"/>
+            <polyline points="30,150 30,230 290,230 290,150" stroke="#c4b5fd" stroke-width="2"/>
+            <polyline points="20,150 160,60 300,150" stroke="#c4b5fd" stroke-width="2" stroke-linejoin="round"/>
             <!-- window -->
-            <rect x="58" y="168" width="64" height="52" stroke="#F3EEDD" stroke-width="2"/>
-            <line x1="90" y1="168" x2="90" y2="220" stroke="#F3EEDD" stroke-width="1.5"/>
-            <line x1="58" y1="194" x2="122" y2="194" stroke="#F3EEDD" stroke-width="1.5"/>
+            <rect x="58" y="168" width="64" height="52" stroke="#f4f1ff" stroke-width="2"/>
+            <line x1="90" y1="168" x2="90" y2="220" stroke="#f4f1ff" stroke-width="1.5"/>
+            <line x1="58" y1="194" x2="122" y2="194" stroke="#f4f1ff" stroke-width="1.5"/>
             <!-- door -->
-            <rect x="198" y="158" width="46" height="72" stroke="#F3EEDD" stroke-width="2"/>
-            <circle cx="234" cy="196" r="2" fill="#F3EEDD"/>
+            <rect x="198" y="158" width="46" height="72" stroke="#f4f1ff" stroke-width="2"/>
+            <circle cx="234" cy="196" r="2" fill="#f4f1ff"/>
             <!-- dimension lines -->
-            <line x1="30" y1="242" x2="290" y2="242" stroke="#3B6EA5" stroke-width="1"/>
-            <line x1="30" y1="238" x2="30" y2="246" stroke="#3B6EA5" stroke-width="1"/>
-            <line x1="290" y1="238" x2="290" y2="246" stroke="#3B6EA5" stroke-width="1"/>
-            <text x="160" y="255" text-anchor="middle" fill="#7FA6D6" font-family="IBM Plex Mono" font-size="10">28'-0"</text>
-            <text x="30" y="30" fill="#7FA6D6" font-family="IBM Plex Mono" font-size="11" letter-spacing="1">PLATE A-101</text>
+            <line x1="30" y1="242" x2="290" y2="242" stroke="#8b7ec8" stroke-width="1"/>
+            <line x1="30" y1="238" x2="30" y2="246" stroke="#8b7ec8" stroke-width="1"/>
+            <line x1="290" y1="238" x2="290" y2="246" stroke="#8b7ec8" stroke-width="1"/>
+            <text x="160" y="255" text-anchor="middle" fill="#ddd6fe" font-family="IBM Plex Mono" font-size="10">28'-0"</text>
+            <text x="30" y="30" fill="#ddd6fe" font-family="IBM Plex Mono" font-size="11" letter-spacing="1">PLATE A-101</text>
           </svg>
           <svg class="stamp-badge" viewBox="0 0 160 160">
             <defs>
               <path id="stampArc" d="M80,80 m-64,0 a64,64 0 1,1 128,0 a64,64 0 1,1 -128,0"/>
             </defs>
-            <circle cx="80" cy="80" r="70" fill="none" stroke="#E2694A" stroke-width="2"/>
-            <circle cx="80" cy="80" r="58" fill="none" stroke="#E2694A" stroke-width="1"/>
-            <text font-family="IBM Plex Mono" font-size="10.5" font-weight="600" letter-spacing="2" fill="#E2694A">
+            <circle cx="80" cy="80" r="70" fill="none" stroke="#ddd6fe" stroke-width="2"/>
+            <circle cx="80" cy="80" r="58" fill="none" stroke="#ddd6fe" stroke-width="1"/>
+            <text font-family="IBM Plex Mono" font-size="10.5" font-weight="600" letter-spacing="2" fill="#ddd6fe">
               <textPath href="#stampArc" startOffset="2%">PERMIT EXPEDITING • SOUTH FLORIDA •</textPath>
             </text>
-            <text x="80" y="76" text-anchor="middle" fill="#E2694A" font-family="Big Shoulders Display" font-weight="900" font-size="21">APPROVED</text>
-            <text x="80" y="94" text-anchor="middle" fill="#E2694A" font-family="IBM Plex Mono" font-size="9">FL · US</text>
+            <text x="80" y="76" text-anchor="middle" fill="#ddd6fe" font-family="Big Shoulders Display" font-weight="900" font-size="21">APPROVED</text>
+            <text x="80" y="94" text-anchor="middle" fill="#ddd6fe" font-family="IBM Plex Mono" font-size="9">FL · US</text>
           </svg>
         </div>
       </div>
@@ -506,6 +520,29 @@
       <p class="mono" style="font-size:12px; color:var(--text-faint);">Permit expediting for Miami, Hialeah, Homestead, Fort Lauderdale, Hollywood, Pembroke Pines, West Palm Beach, Boca Raton &amp; Boynton Beach.</p>
     </div>
   </div>
+
+  <section>
+    <div class="wrap">
+      <div class="photo-strip">
+        <figure>
+          <img src="/photos/south-florida-impact-windows.jpg" alt="Impact windows on a South Florida home">
+          <figcaption>Impact windows</figcaption>
+        </figure>
+        <figure>
+          <img src="/photos/impact-sliding-door.jpg" alt="Impact sliding glass door on a Florida patio">
+          <figcaption>Impact door</figcaption>
+        </figure>
+        <figure>
+          <img src="/photos/florida-tile-reroof.jpg" alt="Tile roof replacement on a South Florida house">
+          <figcaption>Roofing</figcaption>
+        </figure>
+        <figure>
+          <img src="/photos/miami-glass-tower-dusk.jpg" alt="Glass tower in Miami at dusk">
+          <figcaption>Miami-Dade</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
   <!-- HOW IT WORKS -->
   <section id="how-it-works">
@@ -580,6 +617,7 @@
           <a class="btn btn-ghost" href="mailto:angelique@majesticpermits.com?subject=New%20Permit%20Project">Start Your Project →</a>
         </div>
       </div>
+      <p class="lede" style="margin-top:28px; max-width:740px;">Contractors sign in to the client hub. Homeowners get a private link, no password. The office runs the jobs from the admin desk. This page is the front door, not those three.</p>
     </div>
   </section>
 
@@ -594,9 +632,9 @@
         <div class="plate reveal">
           <div class="plate-art">
             <svg viewBox="0 0 100 80" fill="none">
-              <rect x="20" y="14" width="60" height="52" stroke="#1B4C86" stroke-width="2"/>
-              <line x1="50" y1="14" x2="50" y2="66" stroke="#1B4C86" stroke-width="1.5"/>
-              <line x1="20" y1="40" x2="80" y2="40" stroke="#1B4C86" stroke-width="1.5"/>
+              <rect x="20" y="14" width="60" height="52" stroke="#c4b5fd" stroke-width="2"/>
+              <line x1="50" y1="14" x2="50" y2="66" stroke="#c4b5fd" stroke-width="1.5"/>
+              <line x1="20" y1="40" x2="80" y2="40" stroke="#c4b5fd" stroke-width="1.5"/>
             </svg>
           </div>
           <div class="plate-label">
@@ -608,8 +646,8 @@
         <div class="plate reveal">
           <div class="plate-art">
             <svg viewBox="0 0 100 80" fill="none">
-              <rect x="32" y="10" width="36" height="60" rx="1" stroke="#1B4C86" stroke-width="2"/>
-              <circle cx="61" cy="42" r="1.6" fill="#1B4C86"/>
+              <rect x="32" y="10" width="36" height="60" rx="1" stroke="#c4b5fd" stroke-width="2"/>
+              <circle cx="61" cy="42" r="1.6" fill="#c4b5fd"/>
             </svg>
           </div>
           <div class="plate-label">
@@ -621,9 +659,9 @@
         <div class="plate reveal">
           <div class="plate-art">
             <svg viewBox="0 0 100 80" fill="none">
-              <polyline points="14,52 50,16 86,52" stroke="#1B4C86" stroke-width="2" fill="none" stroke-linejoin="round"/>
-              <line x1="22" y1="44" x2="78" y2="44" stroke="#1B4C86" stroke-width="1.2"/>
-              <line x1="30" y1="36" x2="70" y2="36" stroke="#1B4C86" stroke-width="1.2"/>
+              <polyline points="14,52 50,16 86,52" stroke="#c4b5fd" stroke-width="2" fill="none" stroke-linejoin="round"/>
+              <line x1="22" y1="44" x2="78" y2="44" stroke="#c4b5fd" stroke-width="1.2"/>
+              <line x1="30" y1="36" x2="70" y2="36" stroke="#c4b5fd" stroke-width="1.2"/>
             </svg>
           </div>
           <div class="plate-label">
@@ -635,8 +673,8 @@
         <div class="plate reveal">
           <div class="plate-art">
             <svg viewBox="0 0 100 80" fill="none">
-              <rect x="16" y="24" width="42" height="40" stroke="#1B4C86" stroke-width="2"/>
-              <rect x="58" y="40" width="26" height="24" stroke="#1B4C86" stroke-width="2" stroke-dasharray="3 2"/>
+              <rect x="16" y="24" width="42" height="40" stroke="#c4b5fd" stroke-width="2"/>
+              <rect x="58" y="40" width="26" height="24" stroke="#c4b5fd" stroke-width="2" stroke-dasharray="3 2"/>
             </svg>
           </div>
           <div class="plate-label">
@@ -648,9 +686,9 @@
         <div class="plate reveal">
           <div class="plate-art">
             <svg viewBox="0 0 100 80" fill="none">
-              <path d="M14,32 Q50,12 86,32" stroke="#1B4C86" stroke-width="1.5" stroke-dasharray="3 2"/>
-              <rect x="18" y="32" width="64" height="32" rx="14" stroke="#1B4C86" stroke-width="2"/>
-              <path d="M28,48 q5,-6 10,0 q5,6 10,0 q5,-6 10,0 q5,6 10,0" stroke="#1B4C86" stroke-width="1.5" fill="none"/>
+              <path d="M14,32 Q50,12 86,32" stroke="#c4b5fd" stroke-width="1.5" stroke-dasharray="3 2"/>
+              <rect x="18" y="32" width="64" height="32" rx="14" stroke="#c4b5fd" stroke-width="2"/>
+              <path d="M28,48 q5,-6 10,0 q5,6 10,0 q5,-6 10,0 q5,6 10,0" stroke="#c4b5fd" stroke-width="1.5" fill="none"/>
             </svg>
           </div>
           <div class="plate-label">
@@ -662,11 +700,11 @@
         <div class="plate reveal">
           <div class="plate-art">
             <svg viewBox="0 0 100 80" fill="none">
-              <rect x="30" y="12" width="40" height="56" rx="2" stroke="#1B4C86" stroke-width="2"/>
-              <line x1="38" y1="24" x2="62" y2="24" stroke="#1B4C86" stroke-width="1.5"/>
-              <line x1="38" y1="34" x2="62" y2="34" stroke="#1B4C86" stroke-width="1.5"/>
-              <line x1="38" y1="44" x2="62" y2="44" stroke="#1B4C86" stroke-width="1.5"/>
-              <path d="M52,50 l-8,14 h7 l-4,10 12,-16 h-7 z" fill="#1B4C86"/>
+              <rect x="30" y="12" width="40" height="56" rx="2" stroke="#c4b5fd" stroke-width="2"/>
+              <line x1="38" y1="24" x2="62" y2="24" stroke="#c4b5fd" stroke-width="1.5"/>
+              <line x1="38" y1="34" x2="62" y2="34" stroke="#c4b5fd" stroke-width="1.5"/>
+              <line x1="38" y1="44" x2="62" y2="44" stroke="#c4b5fd" stroke-width="1.5"/>
+              <path d="M52,50 l-8,14 h7 l-4,10 12,-16 h-7 z" fill="#c4b5fd"/>
             </svg>
           </div>
           <div class="plate-label">
@@ -678,13 +716,13 @@
         <div class="plate reveal">
           <div class="plate-art">
             <svg viewBox="0 0 100 80" fill="none">
-              <rect x="18" y="34" width="64" height="30" rx="2" stroke="#1B4C86" stroke-width="2"/>
-              <line x1="30" y1="34" x2="30" y2="64" stroke="#1B4C86" stroke-width="1.2"/>
-              <line x1="42" y1="34" x2="42" y2="64" stroke="#1B4C86" stroke-width="1.2"/>
-              <line x1="54" y1="34" x2="54" y2="64" stroke="#1B4C86" stroke-width="1.2"/>
-              <line x1="66" y1="34" x2="66" y2="64" stroke="#1B4C86" stroke-width="1.2"/>
-              <circle cx="50" cy="20" r="9" stroke="#1B4C86" stroke-width="2"/>
-              <path d="M50,13 v14 M44,16 l12,8 M44,24 l12,-8" stroke="#1B4C86" stroke-width="1.2"/>
+              <rect x="18" y="34" width="64" height="30" rx="2" stroke="#c4b5fd" stroke-width="2"/>
+              <line x1="30" y1="34" x2="30" y2="64" stroke="#c4b5fd" stroke-width="1.2"/>
+              <line x1="42" y1="34" x2="42" y2="64" stroke="#c4b5fd" stroke-width="1.2"/>
+              <line x1="54" y1="34" x2="54" y2="64" stroke="#c4b5fd" stroke-width="1.2"/>
+              <line x1="66" y1="34" x2="66" y2="64" stroke="#c4b5fd" stroke-width="1.2"/>
+              <circle cx="50" cy="20" r="9" stroke="#c4b5fd" stroke-width="2"/>
+              <path d="M50,13 v14 M44,16 l12,8 M44,24 l12,-8" stroke="#c4b5fd" stroke-width="1.2"/>
             </svg>
           </div>
           <div class="plate-label">
@@ -696,10 +734,10 @@
         <div class="plate reveal">
           <div class="plate-art">
             <svg viewBox="0 0 100 80" fill="none">
-              <polyline points="24,18 24,48 58,48 58,66" stroke="#1B4C86" stroke-width="2.5" fill="none"/>
-              <circle cx="58" cy="48" r="7" stroke="#1B4C86" stroke-width="2"/>
-              <circle cx="58" cy="70" r="2" fill="#1B4C86"/>
-              <circle cx="58" cy="76" r="1.4" fill="#1B4C86"/>
+              <polyline points="24,18 24,48 58,48 58,66" stroke="#c4b5fd" stroke-width="2.5" fill="none"/>
+              <circle cx="58" cy="48" r="7" stroke="#c4b5fd" stroke-width="2"/>
+              <circle cx="58" cy="70" r="2" fill="#c4b5fd"/>
+              <circle cx="58" cy="76" r="1.4" fill="#c4b5fd"/>
             </svg>
           </div>
           <div class="plate-label">
@@ -709,6 +747,19 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <section id="jurisdictions">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Jurisdictions</span>
+        <h2>Every city.<br>Its own page.</h2>
+      </div>
+      <p class="lede">Miami-Dade, Broward, and Palm Beach. The building department is the city the property sits in, not the mailing address.</p>
+      <div class="j-tabs" role="tablist"><button type="button" class="on" data-county="Miami-Dade">Miami-Dade</button><button type="button" class="" data-county="Broward">Broward</button><button type="button" class="" data-county="Palm Beach">Palm Beach</button></div>
+      <div class="j-panel on" data-panel="Miami-Dade"><a href="/areas/unincorporated-miami-dade">Unincorporated Miami-Dade County</a><a href="/areas/aventura">Aventura</a><a href="/areas/bal-harbour">Bal Harbour</a><a href="/areas/bay-harbor-islands">Bay Harbor Islands</a><a href="/areas/biscayne-park">Biscayne Park</a><a href="/areas/coral-gables">Coral Gables</a><a href="/areas/cutler-bay">Cutler Bay</a><a href="/areas/doral">Doral</a><a href="/areas/el-portal">El Portal</a><a href="/areas/florida-city">Florida City</a><a href="/areas/golden-beach">Golden Beach</a><a href="/areas/hialeah">Hialeah</a><a href="/areas/hialeah-gardens">Hialeah Gardens</a><a href="/areas/homestead">Homestead</a><a href="/areas/indian-creek">Indian Creek</a><a href="/areas/key-biscayne">Key Biscayne</a><a href="/areas/medley">Medley</a><a href="/areas/miami">Miami</a><a href="/areas/miami-beach">Miami Beach</a><a href="/areas/miami-gardens">Miami Gardens</a><a href="/areas/miami-lakes">Miami Lakes</a><a href="/areas/miami-shores">Miami Shores</a><a href="/areas/miami-springs">Miami Springs</a><a href="/areas/north-bay-village">North Bay Village</a><a href="/areas/north-miami">North Miami</a><a href="/areas/north-miami-beach">North Miami Beach</a><a href="/areas/opa-locka">Opa-locka</a><a href="/areas/palmetto-bay">Palmetto Bay</a><a href="/areas/pinecrest">Pinecrest</a><a href="/areas/south-miami">South Miami</a><a href="/areas/sunny-isles-beach">Sunny Isles Beach</a><a href="/areas/surfside">Surfside</a><a href="/areas/sweetwater">Sweetwater</a><a href="/areas/virginia-gardens">Virginia Gardens</a><a href="/areas/west-miami">West Miami</a></div><div class="j-panel" data-panel="Broward"><a href="/areas/unincorporated-broward">Unincorporated Broward County</a><a href="/areas/coconut-creek">Coconut Creek</a><a href="/areas/cooper-city">Cooper City</a><a href="/areas/coral-springs">Coral Springs</a><a href="/areas/dania-beach">Dania Beach</a><a href="/areas/davie">Davie</a><a href="/areas/deerfield-beach">Deerfield Beach</a><a href="/areas/fort-lauderdale">Fort Lauderdale</a><a href="/areas/hallandale-beach">Hallandale Beach</a><a href="/areas/hillsboro-beach">Hillsboro Beach</a><a href="/areas/hollywood">Hollywood</a><a href="/areas/lauderdale-by-the-sea">Lauderdale-by-the-Sea</a><a href="/areas/lauderdale-lakes">Lauderdale Lakes</a><a href="/areas/lauderhill">Lauderhill</a><a href="/areas/lazy-lake">Lazy Lake</a><a href="/areas/lighthouse-point">Lighthouse Point</a><a href="/areas/margate">Margate</a><a href="/areas/miramar">Miramar</a><a href="/areas/north-lauderdale">North Lauderdale</a><a href="/areas/oakland-park">Oakland Park</a><a href="/areas/parkland">Parkland</a><a href="/areas/pembroke-park">Pembroke Park</a><a href="/areas/pembroke-pines">Pembroke Pines</a><a href="/areas/plantation">Plantation</a><a href="/areas/pompano-beach">Pompano Beach</a><a href="/areas/sea-ranch-lakes">Sea Ranch Lakes</a><a href="/areas/southwest-ranches">Southwest Ranches</a><a href="/areas/sunrise">Sunrise</a><a href="/areas/tamarac">Tamarac</a><a href="/areas/west-park">West Park</a><a href="/areas/weston">Weston</a><a href="/areas/wilton-manors">Wilton Manors</a></div><div class="j-panel" data-panel="Palm Beach"><a href="/areas/unincorporated-palm-beach">Unincorporated Palm Beach County</a><a href="/areas/atlantis">Atlantis</a><a href="/areas/belle-glade">Belle Glade</a><a href="/areas/boca-raton">Boca Raton</a><a href="/areas/boynton-beach">Boynton Beach</a><a href="/areas/briny-breezes">Briny Breezes</a><a href="/areas/cloud-lake">Cloud Lake</a><a href="/areas/delray-beach">Delray Beach</a><a href="/areas/glen-ridge">Glen Ridge</a><a href="/areas/gulf-stream">Gulf Stream</a><a href="/areas/greenacres">Greenacres</a><a href="/areas/haverhill">Haverhill</a><a href="/areas/highland-beach">Highland Beach</a><a href="/areas/hypoluxo">Hypoluxo</a><a href="/areas/juno-beach">Juno Beach</a><a href="/areas/jupiter">Jupiter</a><a href="/areas/jupiter-inlet-colony">Jupiter Inlet Colony</a><a href="/areas/lake-clarke-shores">Lake Clarke Shores</a><a href="/areas/lake-park">Lake Park</a><a href="/areas/lake-worth-beach">Lake Worth Beach</a><a href="/areas/lantana">Lantana</a><a href="/areas/loxahatchee-groves">Loxahatchee Groves</a><a href="/areas/manalapan">Manalapan</a><a href="/areas/mangonia-park">Mangonia Park</a><a href="/areas/north-palm-beach">North Palm Beach</a><a href="/areas/ocean-ridge">Ocean Ridge</a><a href="/areas/pahokee">Pahokee</a><a href="/areas/town-of-palm-beach">Town of Palm Beach</a><a href="/areas/palm-beach-gardens">Palm Beach Gardens</a><a href="/areas/palm-beach-shores">Palm Beach Shores</a><a href="/areas/palm-springs">Palm Springs</a><a href="/areas/riviera-beach">Riviera Beach</a><a href="/areas/royal-palm-beach">Royal Palm Beach</a><a href="/areas/south-bay">South Bay</a><a href="/areas/south-palm-beach">South Palm Beach</a><a href="/areas/tequesta">Tequesta</a><a href="/areas/wellington">Wellington</a><a href="/areas/westlake">Westlake</a><a href="/areas/west-palm-beach">West Palm Beach</a></div>
     </div>
   </section>
 
@@ -743,12 +794,12 @@
   <!-- CTA BAND -->
   <section class="cta-band" id="contact">
     <svg class="cta-compass" viewBox="0 0 220 220" fill="none" aria-hidden="true">
-      <circle cx="150" cy="70" r="1.8" fill="#F3EEDD"/>
-      <path d="M150,70 L60,205" stroke="#F3EEDD" stroke-width="1.4"/>
-      <path d="M150,70 L205,190" stroke="#F3EEDD" stroke-width="1.4"/>
-      <path d="M96,178 A72,72 0 0 1 190,150" stroke="#F3EEDD" stroke-width="1" stroke-dasharray="3 3"/>
-      <path d="M56,203 l4,7 6,-3z" fill="#F3EEDD"/>
-      <path d="M203,187 l7,4 -3,6z" fill="#F3EEDD"/>
+      <circle cx="150" cy="70" r="1.8" fill="#f4f1ff"/>
+      <path d="M150,70 L60,205" stroke="#f4f1ff" stroke-width="1.4"/>
+      <path d="M150,70 L205,190" stroke="#f4f1ff" stroke-width="1.4"/>
+      <path d="M96,178 A72,72 0 0 1 190,150" stroke="#f4f1ff" stroke-width="1" stroke-dasharray="3 3"/>
+      <path d="M56,203 l4,7 6,-3z" fill="#f4f1ff"/>
+      <path d="M203,187 l7,4 -3,6z" fill="#f4f1ff"/>
     </svg>
     <div class="wrap">
       <div class="cta-inner reveal">
@@ -816,6 +867,7 @@
           <li><a href="#who-its-for">Who It's For</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#faq">FAQ</a></li>
+          <li><a href="#jurisdictions">Jurisdictions</a></li>
           <li><a href="/permit-closer">The Permit Closer</a></li>
         </ul>
       </div>
@@ -823,7 +875,7 @@
         <h4>Contact</h4>
         <ul>
           <li><a href="mailto:angelique@majesticpermits.com">angelique@majesticpermits.com</a></li>
-          <li><a href="tel:+13055550100">(305) 555-0100</a></li>
+          <li><a href="tel:+15618883805">(561) 888-3805</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -839,6 +891,17 @@
     </div>
   </div>
 </footer>
+
+
+<script>
+  document.querySelectorAll(".j-tabs button").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var county = btn.getAttribute("data-county");
+      document.querySelectorAll(".j-tabs button").forEach(function(b){ b.classList.toggle("on", b===btn); });
+      document.querySelectorAll(".j-panel").forEach(function(p){ p.classList.toggle("on", p.getAttribute("data-panel")===county); });
+    });
+  });
+</script>
 
 <script>
   var navToggle = document.getElementById('navToggle');

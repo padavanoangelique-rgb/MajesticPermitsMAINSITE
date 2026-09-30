@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#0c1024">
 
 <title>Received a Letter About an Expired Permit? | The Permit Closer</title>
 <meta name="description" content="The Permit Closer helps South Florida homeowners resolve expired and open permits identified through public county records. Learn what your letter means and how the closure process works — a Majestic Permits company.">
@@ -111,20 +111,20 @@
 
 <style>
   :root{
-    --ink:#0B1220;
-    --ink-soft:#4B5568;
-    --muted:#7C879C;
-    --bg:#FFFFFF;
-    --bg-tint:#F6F8FC;
-    --bg-tint-2:#EFF4FF;
-    --blue:#1B4C86;
-    --blue-deep:#0F2E52;
-    --blue-tint:#E9EFF7;
-    --gold:#1B4C86;
-    --gold-deep:#0F2E52;
-    --cream:#FFFFFF;
-    --line:#E4E8F0;
-    --line-soft:#EDF0F6;
+    --ink:#f4f1ff;
+    --ink-soft:#c9c2e4;
+    --muted:#8f87ad;
+    --bg:#0c1024;
+    --bg-tint:#17142f;
+    --bg-tint-2:#211a42;
+    --blue:#c4b5fd;
+    --blue-deep:#6d28d9;
+    --blue-tint:#211a42;
+    --gold:#c4b5fd;
+    --gold-deep:#6d28d9;
+    --cream:#17142f;
+    --line:rgba(196,181,253,0.22);
+    --line-soft:rgba(196,181,253,0.14);
     --shadow: 0 24px 60px -24px rgba(15,42,90,0.22);
     --shadow-sm: 0 8px 24px -12px rgba(15,42,90,0.18);
     --radius: 16px;
@@ -133,7 +133,7 @@
     --serif: "Fraunces", Georgia, "Times New Roman", serif;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{ scroll-behavior:smooth; color-scheme: light; background:#fff; }
+  html{ scroll-behavior:smooth; color-scheme: dark; background:#0c1024; }
   body{
     font-family: var(--sans);
     background: var(--bg);
@@ -141,7 +141,7 @@
     -webkit-font-smoothing: antialiased;
     line-height:1.55;
     font-size:17px;
-    color-scheme: light;
+    color-scheme: dark;
   }
   img{max-width:100%; display:block;}
   a{color:inherit; text-decoration:none;}
@@ -194,7 +194,7 @@
   }
   .btn-primary{ background:var(--blue); color:#fff; box-shadow:var(--shadow-sm); }
   .btn-primary:hover{ background:var(--blue-deep); color:#fff; }
-  .btn-outline{ border-color:var(--line); color:var(--ink); background:#fff; }
+  .btn-outline{ border-color:var(--line); color:var(--ink); background:var(--bg-tint); }
   .btn-outline:hover{ border-color:var(--blue); color:var(--blue-deep); }
   .btn-ghost{ color:var(--ink-soft); font-size:14px; font-weight:600; padding:10px 6px; }
   .btn-ghost:hover{ color:var(--blue-deep); }
@@ -247,7 +247,7 @@
   .breadcrumb [aria-current="page"]{ color:var(--ink); font-weight:600; }
 
   /* ================= HERO ================= */
-  .hero{ padding:36px 0 56px; background: linear-gradient(180deg, var(--bg-tint) 0%, #fff 70%); }
+  .hero{ padding:36px 0 56px; background: linear-gradient(180deg, var(--bg-tint) 0%, var(--bg) 70%); }
   .hero-inner{
     display:grid; gap:36px; align-items:center;
     max-width:1160px; margin:0 auto; text-align:left;
@@ -263,7 +263,7 @@
   .hero-sub{ font-size:17.5px; color:var(--ink-soft); max-width:540px; margin:0 0 26px; }
   .hero-ctas{ display:flex; flex-wrap:wrap; gap:12px; margin-bottom:22px; }
   .hero-media{
-    background:#fff; border:1px solid var(--line); border-radius:20px;
+    background:var(--bg-tint); border:1px solid var(--line); border-radius:20px;
     overflow:hidden; box-shadow: var(--shadow);
   }
   .hero-media video, .hero-media img{
@@ -273,7 +273,7 @@
   .legit-strip{ display:flex; flex-wrap:wrap; gap:10px; }
   .legit-item{
     font-size:13.5px; font-weight:600; color:var(--ink-soft);
-    background:#fff; border:1px solid var(--line); border-radius:999px;
+    background:var(--bg-tint); border:1px solid var(--line); border-radius:999px;
     padding:9px 15px; display:flex; align-items:center; gap:7px;
   }
   .legit-item svg{ width:14px; height:14px; color:var(--blue); flex-shrink:0; }
@@ -288,7 +288,7 @@
   /* ================= LETTER EXPLAINER ================= */
   .explain-grid{ display:grid; gap:18px; grid-template-columns:1fr; }
   @media(min-width:760px){ .explain-grid{ grid-template-columns:repeat(3,1fr); } }
-  .explain-card{ background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:24px 22px; }
+  .explain-card{ background:var(--bg-tint); border:1px solid var(--line); border-radius:var(--radius); padding:24px 22px; }
   .explain-card .ic{
     width:42px; height:42px; border-radius:11px; background:var(--blue-tint); color:var(--blue-deep);
     display:flex; align-items:center; justify-content:center; margin-bottom:14px;
@@ -301,7 +301,7 @@
   .reassure{ background:var(--bg-tint); }
   .reassure-list{ display:flex; flex-direction:column; gap:14px; max-width:720px; margin:0 auto; }
   .reassure-item{
-    background:#fff; border:1px solid var(--line); border-radius:var(--radius-sm);
+    background:var(--bg-tint); border:1px solid var(--line); border-radius:var(--radius-sm);
     padding:18px 20px; display:flex; gap:14px; align-items:flex-start;
   }
   .reassure-item svg{ width:20px; height:20px; color:var(--blue-deep); flex-shrink:0; margin-top:2px; }
@@ -320,12 +320,12 @@
   .risk-list li{ font-size:14.5px; color:var(--ink); display:flex; gap:10px; }
   .risk-list li::before{ content:"•"; color:var(--blue); flex-shrink:0; }
   .risk-actions{ display:flex; flex-direction:column; gap:12px; }
-  .risk-actions .btn-outline{ border-color:var(--line); color:var(--ink); background:#fff; }
+  .risk-actions .btn-outline{ border-color:var(--line); color:var(--ink); background:var(--bg-tint); }
 
   /* ================= PROCESS ================= */
   .path{ display:grid; gap:20px; grid-template-columns:1fr; }
   @media(min-width:760px){ .path{ grid-template-columns:repeat(3,1fr); } }
-  .path-step{ background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:24px 22px; }
+  .path-step{ background:var(--bg-tint); border:1px solid var(--line); border-radius:var(--radius); padding:24px 22px; }
   .path-tag{
     display:inline-flex; align-items:center; justify-content:center;
     width:36px; height:36px; border-radius:10px; background:var(--blue-tint);
@@ -345,13 +345,13 @@
   .contact-info .ci-row{ font-size:14px; color:var(--ink-soft); }
   .contact-info .ci-row strong{ display:block; color:var(--ink); font-size:12px; letter-spacing:0.03em; text-transform:uppercase; margin-bottom:4px; font-weight:700; }
 
-  form.quote{ border:1px solid var(--line); border-radius:var(--radius); padding:28px; background:#fff; box-shadow:var(--shadow-sm); }
+  form.quote{ border:1px solid var(--line); border-radius:var(--radius); padding:28px; background:var(--bg-tint); box-shadow:var(--shadow-sm); }
   .form-grid{ display:grid; gap:16px; grid-template-columns:1fr; }
   @media(min-width:640px){ .form-grid.two{ grid-template-columns:1fr 1fr; } }
   .field label{ display:block; font-size:13px; font-weight:700; color:var(--ink-soft); margin-bottom:7px; }
   .field .optional{ font-weight:500; color:var(--muted); text-transform:none; letter-spacing:0; }
   .field input, .field select, .field textarea{
-    width:100%; padding:13px 14px; border:1.5px solid var(--line); background:#fff;
+    width:100%; padding:13px 14px; border:1.5px solid var(--line); background:var(--bg-tint);
     font-family:var(--sans); font-size:15px; color:var(--ink); border-radius:var(--radius-sm);
   }
   .field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--blue); }
@@ -398,12 +398,6 @@
   .foot-bottom{ border-top:1px solid rgba(255,255,255,0.12); padding-top:22px; display:flex; flex-direction:column; gap:10px; font-size:12.5px; color:rgba(255,255,255,0.45); }
   @media(min-width:760px){ .foot-bottom{ flex-direction:row; justify-content:space-between; } }
   .disclosure{ max-width:640px; }
-
-  @media (prefers-color-scheme: dark){
-    html, body{ background:#FFFFFF !important; color:#0B1220 !important; }
-    header.site, #mobileMenu, .sticky-cta, .explain-card, .reassure-item, .path-step,
-    form.quote, .field input, .field select, .field textarea{ background:#FFFFFF !important; color:#1C2A3A !important; }
-  }
 </style>
 </head>
 <body>
