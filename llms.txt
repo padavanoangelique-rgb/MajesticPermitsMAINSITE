@@ -1,0 +1,36 @@
+# Majestic Permits
+
+Majestic Permits files, tracks, and closes out building permits for contractors and homeowners in Miami-Dade, Broward, and Palm Beach County, Florida.
+
+Phone: (561) 888-3805
+Email: angelique@majesticpermits.com
+Site: https://www.majesticpermits.com/
+Request more info: https://www.majesticpermits.com/#info
+Contractor login: https://hub.majesticpermits.com
+
+A request on the public site does not open a permit. New permits are requested inside the hub after the company is a client.
+
+## Permit types
+
+- https://www.majesticpermits.com/permits/impact-windows
+- https://www.majesticpermits.com/permits/doors
+- https://www.majesticpermits.com/permits/roofing
+- https://www.majesticpermits.com/permits/bath-remodel
+- https://www.majesticpermits.com/permits/fencing
+- https://www.majesticpermits.com/permits/residential-remodeling
+- https://www.majesticpermits.com/permits/patio-enclosure
+- https://www.majesticpermits.com/permits/pools
+- https://www.majesticpermits.com/permits/electrical
+- https://www.majesticpermits.com/permits/hvac
+- https://www.majesticpermits.com/permits/plumbing
+
+## Expired permits
+
+The Permit Closer is part of Majestic Permits. It answers letters about open or expired permits. The free report asks for a name, an email, and the address on the letter.
+
+https://www.majesticpermits.com/permit-closer
+
+## Cities
+
+Every municipality in the three counties has a page under https://www.majesticpermits.com/areas/
+Full list: https://www.majesticpermits.com/sitemap.xml
