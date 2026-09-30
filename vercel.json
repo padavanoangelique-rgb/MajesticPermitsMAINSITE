@@ -1,6 +1,4 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
   "redirects": [
     {
       "source": "/",
@@ -25,6 +23,16 @@
       "has": [{ "type": "host", "value": "www.thepermitcloser.com" }],
       "destination": "https://www.majesticpermits.com/permit-closer",
       "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "https://hub.majesticpermits.com/"
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://hub.majesticpermits.com/:path*"
     }
   ]
 }
