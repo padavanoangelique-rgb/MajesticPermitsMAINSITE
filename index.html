@@ -343,8 +343,10 @@
   .plate-art svg{ width:64%; height:64%; }
   .plate-label{ padding:14px 16px; }
   .plate-label .mono{ font-size:11px; color:var(--text-faint); letter-spacing:0.08em; }
-  a.plate{ display:block; color:inherit; text-decoration:none; }
+  a.plate{ display:block; color:inherit; text-decoration:none; cursor:pointer; position:relative; z-index:1; }
   a.plate:hover{ border-color:var(--accent); }
+  a.plate .name{ color:var(--accent); text-decoration:underline; text-underline-offset:3px; }
+  a.plate .go{ display:block; margin-top:8px; font-size:13px; font-weight:700; color:var(--accent); }
   .plate-art:empty{ display:none; border:0; }
 
   /* ---------- pricing ---------- */
@@ -417,9 +419,11 @@
   .mobile-menu a{ padding:14px 24px; text-decoration:none; color:var(--text-soft); font-size:15px; border-top:1px solid var(--border); }
   .mobile-menu a.btn-primary{ margin:14px 24px; border-top:none; text-align:center; }
   .photo-strip{display:grid; grid-template-columns:repeat(4,1fr); gap:10px;}
-  .photo-strip figure{margin:0; border-radius:16px; overflow:hidden; border:1px solid var(--border); background:var(--surface);}
+  .photo-strip a{display:block; border-radius:16px; overflow:hidden; border:1px solid var(--border); background:var(--surface); color:var(--text-soft); text-decoration:none; font-size:12px;}
+  .photo-strip a:hover{border-color:var(--accent);}
   .photo-strip img{width:100%; height:180px; object-fit:cover; display:block;}
-  .photo-strip figcaption{padding:8px 10px 10px; font-size:12px; color:var(--text-soft);}
+  .photo-strip figcaption{padding:8px 10px 10px;}
+  .trust-item a{ color:var(--accent); text-decoration:underline; text-underline-offset:3px; }
   .j-tabs{display:flex; flex-wrap:wrap; gap:8px; margin:18px 0;}
   .j-tabs button{border:1px solid var(--border); background:transparent; color:var(--text-soft); border-radius:999px; padding:8px 14px; font:inherit; cursor:pointer;}
   .j-tabs button.on{background:var(--accent); color:#1a1033; border-color:var(--accent); font-weight:700;}
@@ -534,7 +538,7 @@
     <div class="wrap trust-row">
       <div class="trust-item"><span class="dot"></span><b>South Florida permit expediting</b></div>
       <div class="trust-item">Miami&#8209;Dade &nbsp;·&nbsp; Broward &nbsp;·&nbsp; Palm Beach</div>
-      <div class="trust-item">Windows &nbsp;·&nbsp; Doors &nbsp;·&nbsp; Roofing &nbsp;·&nbsp; Renovations &nbsp;·&nbsp; Pools &nbsp;·&nbsp; Electrical &nbsp;·&nbsp; HVAC &nbsp;·&nbsp; Plumbing</div>
+      <div class="trust-item"><a href="/permits/impact-windows">Windows</a> &nbsp;·&nbsp; <a href="/permits/doors">Doors</a> &nbsp;·&nbsp; <a href="/permits/roofing">Roofing</a> &nbsp;·&nbsp; <a href="/permits/residential-remodeling">Remodeling</a> &nbsp;·&nbsp; <a href="/permits/bath-remodel">Baths</a> &nbsp;·&nbsp; <a href="/permits/fencing">Fencing</a> &nbsp;·&nbsp; <a href="/permits/patio-enclosure">Patio enclosures</a> &nbsp;·&nbsp; <a href="/permits/pools">Pools</a> &nbsp;·&nbsp; <a href="/permits/electrical">Electrical</a> &nbsp;·&nbsp; <a href="/permits/hvac">HVAC</a> &nbsp;·&nbsp; <a href="/permits/plumbing">Plumbing</a></div>
     </div>
     <div class="wrap trust-row" style="margin-top:12px;">
       <p class="mono" style="font-size:12px; color:var(--text-faint);">Permit expediting for Miami, Hialeah, Homestead, Fort Lauderdale, Hollywood, Pembroke Pines, West Palm Beach, Boca Raton &amp; Boynton Beach.</p>
@@ -544,22 +548,22 @@
   <section>
     <div class="wrap">
       <div class="photo-strip">
-        <figure>
+        <a href="/permits/impact-windows">
           <img src="/photos/south-florida-impact-windows.jpg" alt="Impact windows on a South Florida home">
           <figcaption>Impact windows</figcaption>
-        </figure>
-        <figure>
+        </a>
+        <a href="/permits/doors">
           <img src="/photos/impact-sliding-door.jpg" alt="Impact sliding glass door on a Florida patio">
           <figcaption>Impact door</figcaption>
-        </figure>
-        <figure>
+        </a>
+        <a href="/permits/roofing">
           <img src="/photos/florida-tile-reroof.jpg" alt="Tile roof replacement on a South Florida house">
           <figcaption>Roofing</figcaption>
-        </figure>
-        <figure>
-          <img src="/photos/miami-glass-tower-dusk.jpg" alt="Glass tower in Miami at dusk">
-          <figcaption>Miami-Dade</figcaption>
-        </figure>
+        </a>
+        <a href="/permits/residential-remodeling">
+          <img src="/photos/miami-glass-tower-dusk.jpg" alt="A remodeled South Florida living room opening to the water">
+          <figcaption>Remodeling</figcaption>
+        </a>
       </div>
     </div>
   </section>
@@ -652,57 +656,57 @@
         <a class="plate reveal" href="/permits/bath-remodel">
           <div class="plate-art"><img src="/photos/bath-remodel.jpg" alt="A bath that moves a wall, a drain, or a shower."></div>
           <div class="plate-label"><div class="mono">A-401</div><div class="name">Bath remodel</div>
-            <p style="font-size:13px; margin-top:6px;">A bath that moves a wall, a drain, or a shower.</p></div>
+            <p style="font-size:13px; margin-top:6px;">A bath that moves a wall, a drain, or a shower.</p><span class="go">What's usually needed →</span></div>
         </a>
         <a class="plate reveal" href="/permits/fencing">
           <div class="plate-art"><img src="/photos/fencing.jpg" alt="Wood, vinyl, aluminum, and masonry fences."></div>
           <div class="plate-label"><div class="mono">A-501</div><div class="name">Fencing</div>
-            <p style="font-size:13px; margin-top:6px;">Wood, vinyl, aluminum, and masonry fences.</p></div>
+            <p style="font-size:13px; margin-top:6px;">Wood, vinyl, aluminum, and masonry fences.</p><span class="go">What's usually needed →</span></div>
         </a>
         <a class="plate reveal" href="/permits/residential-remodeling">
           <div class="plate-art"><img src="/photos/residential-remodel.jpg" alt="Interior work, opened walls, and whole-house updates."></div>
           <div class="plate-label"><div class="mono">A-301</div><div class="name">Residential remodeling</div>
-            <p style="font-size:13px; margin-top:6px;">Interior work, opened walls, and whole-house updates.</p></div>
+            <p style="font-size:13px; margin-top:6px;">Interior work, opened walls, and whole-house updates.</p><span class="go">What's usually needed →</span></div>
         </a>
         <a class="plate reveal" href="/permits/patio-enclosure">
           <div class="plate-art"><img src="/photos/patio-enclosure.jpg" alt="Screen rooms, lanais, and aluminum cages."></div>
           <div class="plate-label"><div class="mono">S-201</div><div class="name">Patio enclosure</div>
-            <p style="font-size:13px; margin-top:6px;">Screen rooms, lanais, and aluminum cages.</p></div>
+            <p style="font-size:13px; margin-top:6px;">Screen rooms, lanais, and aluminum cages.</p><span class="go">What's usually needed →</span></div>
         </a>
         <a class="plate reveal" href="/permits/impact-windows">
           <div class="plate-art"><img src="/photos/south-florida-impact-windows.jpg" alt="Replacement and new impact windows."></div>
           <div class="plate-label"><div class="mono">A-101</div><div class="name">Impact windows</div>
-            <p style="font-size:13px; margin-top:6px;">Replacement and new impact windows.</p></div>
+            <p style="font-size:13px; margin-top:6px;">Replacement and new impact windows.</p><span class="go">What's usually needed →</span></div>
         </a>
         <a class="plate reveal" href="/permits/doors">
           <div class="plate-art"><img src="/photos/impact-sliding-door.jpg" alt="Impact sliding doors and entry doors."></div>
           <div class="plate-label"><div class="mono">A-102</div><div class="name">Doors</div>
-            <p style="font-size:13px; margin-top:6px;">Impact sliding doors and entry doors.</p></div>
+            <p style="font-size:13px; margin-top:6px;">Impact sliding doors and entry doors.</p><span class="go">What's usually needed →</span></div>
         </a>
         <a class="plate reveal" href="/permits/roofing">
           <div class="plate-art"><img src="/photos/florida-tile-reroof.jpg" alt="Reroofs and roof repairs."></div>
           <div class="plate-label"><div class="mono">A-201</div><div class="name">Roofing</div>
-            <p style="font-size:13px; margin-top:6px;">Reroofs and roof repairs.</p></div>
+            <p style="font-size:13px; margin-top:6px;">Reroofs and roof repairs.</p><span class="go">What's usually needed →</span></div>
         </a>
         <a class="plate reveal" href="/permits/pools">
           <div class="plate-art"></div>
           <div class="plate-label"><div class="mono">S-101</div><div class="name">Pools</div>
-            <p style="font-size:13px; margin-top:6px;">A new pool, a spa, and the barrier around it.</p></div>
+            <p style="font-size:13px; margin-top:6px;">A new pool, a spa, and the barrier around it.</p><span class="go">What's usually needed →</span></div>
         </a>
         <a class="plate reveal" href="/permits/electrical">
           <div class="plate-art"></div>
           <div class="plate-label"><div class="mono">E-101</div><div class="name">Electrical</div>
-            <p style="font-size:13px; margin-top:6px;">Panels, circuits, and generators.</p></div>
+            <p style="font-size:13px; margin-top:6px;">Panels, circuits, and generators.</p><span class="go">What's usually needed →</span></div>
         </a>
         <a class="plate reveal" href="/permits/hvac">
           <div class="plate-art"></div>
           <div class="plate-label"><div class="mono">M-101</div><div class="name">HVAC</div>
-            <p style="font-size:13px; margin-top:6px;">Change-outs and new air-conditioning systems.</p></div>
+            <p style="font-size:13px; margin-top:6px;">Change-outs and new air-conditioning systems.</p><span class="go">What's usually needed →</span></div>
         </a>
         <a class="plate reveal" href="/permits/plumbing">
           <div class="plate-art"></div>
           <div class="plate-label"><div class="mono">P-101</div><div class="name">Plumbing</div>
-            <p style="font-size:13px; margin-top:6px;">Water heaters, repipes, and fixture moves.</p></div>
+            <p style="font-size:13px; margin-top:6px;">Water heaters, repipes, and fixture moves.</p><span class="go">What's usually needed →</span></div>
         </a>
       </div>
     </div>
