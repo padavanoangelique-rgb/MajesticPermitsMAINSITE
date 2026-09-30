@@ -28,11 +28,11 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "https://hub.majesticpermits.com/"
+      "destination": "https://majestic-permits-hub.vercel.app/"
     },
     {
       "source": "/:path*",
-      "destination": "https://hub.majesticpermits.com/:path*"
+      "destination": "https://majestic-permits-hub.vercel.app/:path*"
     }
   ]
 }
