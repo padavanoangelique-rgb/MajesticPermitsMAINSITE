@@ -167,9 +167,9 @@
   /* ================= HEADER ================= */
   header.site{
     position: sticky; top:0; z-index:50;
-    background: rgba(255,255,255,0.92);
+    background: rgba(12,16,36,0.94);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid rgba(196,181,253,0.22);
   }
   .nav-row{ display:flex; align-items:center; justify-content:space-between; height:76px; gap:14px; }
   .logo{ font-weight:800; font-size: 19px; letter-spacing:-0.01em; display:flex; align-items:center; gap:10px; }
@@ -192,8 +192,8 @@
     display:inline-flex; align-items:center; justify-content:center; gap:8px;
     white-space:nowrap; border:1.5px solid transparent; transition: all .16s ease;
   }
-  .btn-primary{ background:var(--blue); color:#fff; box-shadow:var(--shadow-sm); }
-  .btn-primary:hover{ background:var(--blue-deep); color:#fff; }
+  .btn-primary{ background:linear-gradient(105deg, #6d28d9, #4f46e5); color:#fff; box-shadow:none; }
+  .btn-primary:hover{ filter:brightness(1.08); color:#fff; }
   .btn-outline{ border-color:var(--line); color:var(--ink); background:var(--bg-tint); }
   .btn-outline:hover{ border-color:var(--blue); color:var(--blue-deep); }
   .btn-ghost{ color:var(--ink-soft); font-size:14px; font-weight:600; padding:10px 6px; }
@@ -218,7 +218,7 @@
 
   #mobileMenu{
     position:fixed; inset:0 0 auto 0; top:76px;
-    background:var(--cream); border-bottom:1px solid var(--line);
+    background:var(--bg); border-bottom:1px solid var(--line);
     transform:translateY(-8px); opacity:0; pointer-events:none;
     transition: all .2s ease; z-index:49; padding:20px 22px 28px;
   }
