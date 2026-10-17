@@ -13,19 +13,39 @@
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/:path((?!n/|_next/|api/notice/|favicon\\.svg$).*)",
       "has": [{ "type": "host", "value": "thepermitcloser.com" }],
       "destination": "https://www.majesticpermits.com/permit-closer",
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/:path((?!n/|_next/|api/notice/|favicon\\.svg$).*)",
       "has": [{ "type": "host", "value": "www.thepermitcloser.com" }],
       "destination": "https://www.majesticpermits.com/permit-closer",
       "permanent": true
     }
   ],
   "rewrites": [
+    {
+      "source": "/n/:token",
+      "has": [{ "type": "host", "value": "(?:www\\.)?thepermitcloser\\.com" }],
+      "destination": "https://mpcommonwealth.site/n/:token"
+    },
+    {
+      "source": "/api/notice/:path*",
+      "has": [{ "type": "host", "value": "(?:www\\.)?thepermitcloser\\.com" }],
+      "destination": "https://mpcommonwealth.site/api/notice/:path*"
+    },
+    {
+      "source": "/_next/:path*",
+      "has": [{ "type": "host", "value": "(?:www\\.)?thepermitcloser\\.com" }],
+      "destination": "https://mpcommonwealth.site/_next/:path*"
+    },
+    {
+      "source": "/favicon.svg",
+      "has": [{ "type": "host", "value": "(?:www\\.)?thepermitcloser\\.com" }],
+      "destination": "https://mpcommonwealth.site/favicon.svg"
+    },
     {
       "source": "/",
       "destination": "https://majestic-permits-hub.vercel.app/"
