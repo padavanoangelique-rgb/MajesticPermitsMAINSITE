@@ -30,7 +30,7 @@ export default async function handler(req, res) {
 
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
     console.error('Missing SUPABASE_URL or SUPABASE_ANON_KEY.');
-    return res.status(500).json({ error: 'Something went wrong on our end. Please call (561) 888-3805.' });
+    return res.status(500).json({ error: 'Something went wrong on our end. Please call (954) 800-2578.' });
   }
 
   try {
@@ -55,11 +55,11 @@ export default async function handler(req, res) {
 
     if (!saved.ok) {
       console.error('Supabase insert failed:', saved.status, await saved.text());
-      return res.status(500).json({ error: 'Something went wrong on our end. Please call (561) 888-3805.' });
+      return res.status(500).json({ error: 'Something went wrong on our end. Please call (954) 800-2578.' });
     }
   } catch (err) {
     console.error('Supabase insert threw:', err);
-    return res.status(500).json({ error: 'Something went wrong on our end. Please call (561) 888-3805.' });
+    return res.status(500).json({ error: 'Something went wrong on our end. Please call (954) 800-2578.' });
   }
 
   if (process.env.RESEND_API_KEY) {
